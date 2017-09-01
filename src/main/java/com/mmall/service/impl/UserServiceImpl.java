@@ -9,6 +9,7 @@ import com.mmall.service.IUserService;
 
 public class UserServiceImpl implements IUserService {
 	
+	
 	@Autowired
 	private UserMapper userMapper;
 
