@@ -5,10 +5,11 @@
 
 <generatorConfiguration>
     <!--导入属性配置-->
+    <!--
     <properties resource="datasource.properties"></properties>
-
+     -->
     <!--指定特定数据库的jdbc驱动jar包的位置-->
-    <classPathEntry location="${db.driverLocation}"/>
+    <classPathEntry location="C:/pro/study/mylibs/mysql-jdbc/mysql-connector-java-5.1.43-bin.jar"/>
 
     <context id="default" targetRuntime="MyBatis3">
 
@@ -20,10 +21,10 @@
 
         <!--jdbc的数据库连接 -->
         <jdbcConnection
-                driverClass="${db.driverClassName}"
-                connectionURL="${db.url}"
-                userId="${db.username}"
-                password="${db.password}">
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://192.168.254.128:3306/mmall?characterEncoding=utf8"
+                userId="root"
+                password="lucy-jackey">
         </jdbcConnection>
 
 
@@ -38,7 +39,7 @@
             targetProject     指定在该项目下所在的路径
         -->
         <!--<javaModelGenerator targetPackage="com.mmall.pojo" targetProject=".\src\main\java">-->
-        <javaModelGenerator targetPackage="com.mmall.pojo" targetProject="./src/main/java">
+        <javaModelGenerator targetPackage="com.mmall.pojo" targetProject="mmall/src/main/java">
             <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
             <property name="enableSubPackages" value="false"/>
             <!-- 是否对model添加 构造函数 -->
@@ -51,7 +52,7 @@
 
         <!--mapper映射文件生成所在的目录 为每一个数据库的表生成对应的SqlMap文件 -->
         <!--<sqlMapGenerator targetPackage="mappers" targetProject=".\src\main\resources">-->
-        <sqlMapGenerator targetPackage="mappers" targetProject="./src/main/resources">
+        <sqlMapGenerator targetPackage="mappers" targetProject="mmall/src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
@@ -63,7 +64,7 @@
 
         <!-- targetPackage：mapper接口dao生成的位置 -->
         <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.mmall.dao" targetProject=".\src\main\java">-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mmall.dao" targetProject="./src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mmall.dao" targetProject="mmall/src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
