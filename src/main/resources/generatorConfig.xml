@@ -5,11 +5,11 @@
 
 <generatorConfiguration>
     <!--导入属性配置-->
-    <!--
+    
     <properties resource="datasource.properties"></properties>
-     -->
+     
     <!--指定特定数据库的jdbc驱动jar包的位置-->
-    <classPathEntry location="C:/pro/study/mylibs/mysql-jdbc/mysql-connector-java-5.1.43-bin.jar"/>
+    <classPathEntry location="${db.driverLocation}"/>
 
     <context id="default" targetRuntime="MyBatis3">
 
@@ -21,10 +21,10 @@
 
         <!--jdbc的数据库连接 -->
         <jdbcConnection
-                driverClass="com.mysql.jdbc.Driver"
-                connectionURL="jdbc:mysql://192.168.254.128:3306/mmall?characterEncoding=utf8"
-                userId="root"
-                password="lucy-jackey">
+                driverClass="${db.driverClassName}"
+                connectionURL="${db.url}"
+                userId="${db.username}"
+                password="${db.password}">
         </jdbcConnection>
 
 
