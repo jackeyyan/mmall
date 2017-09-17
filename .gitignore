@@ -3,6 +3,9 @@
 #dbconfig
 datasource.properties
 
+#project Config
+mmall.properties
+
 #package
 *.war
 *.ear
