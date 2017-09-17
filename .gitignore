@@ -5,6 +5,7 @@ datasource.properties
 
 #project Config
 mmall.properties
+index.jsp
 
 #package
 *.war
