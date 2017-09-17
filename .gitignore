@@ -1,5 +1,8 @@
 *.class
 
+#dbconfig
+datasource.properties
+
 #package
 *.war
 *.ear
